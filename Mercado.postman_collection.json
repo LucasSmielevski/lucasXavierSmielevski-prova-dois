@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "f25f368e-c51d-4c81-9dd5-529396cb90bf",
+		"name": "Mercado",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37926125"
+	},
+	"item": [
+		{
+			"name": "1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Fort LTDA\",\r\n    \"nomeFantasia\" : \"Fort Atacadista\",\r\n    \"cnpj\" : \"25.257.348/0001-74\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/mercados",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mercados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"nome\" : \"Feijão\",\r\n   \"mercadoId\" : 1,\r\n   \"estoque\" : 12,\r\n   \"valorUnitario\" : 10.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/produtos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"mercadoId\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/vendas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vendas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"vendaId\" : 1,\r\n   \"produtoId\" : 1, \r\n   \"quantidade\" : 0,\r\n   \"valorTotal\" : 32.50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/itensVenda",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"itensVenda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/produtos?nome=fei",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "fei"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/produtos/estoque?id=1&estoque=6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos",
+						"estoque"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "estoque",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/produtos/valor?id=1&valorUnitario=0",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos",
+						"valor"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "valorUnitario",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "13",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/vendas/finalizar?id=1&status=FINALIZADO",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vendas",
+						"finalizar"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "\n"
+						},
+						{
+							"key": "status",
+							"value": "FINALIZADO"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
